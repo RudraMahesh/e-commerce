@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Bootstrap</title>
+    <style>
+        .bg-custom {
+            width: 100px;
+            height:100px;
+            border-radius: 50%;
+            background: #fff;
+            margin:auto
+        }
+        #img{
+            height:100vh;
+        }
+        #free{
+            background:url(images/bg-img.jpg) no-repeat;
+            background-size: 100%;
+        }
+        #btn{
+            transition: 0.7s;
+        }
+        #btn1:hover{
+            box-shadow: 1px 1px 4px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl navbar-light bg-dark">
+          <div class="container ">
+            <a class="navbar-brand text-white" href="#" >croma
+                <!-- <img src="images/logo.png" alt="" class="w-25 me-auto"> -->
+            </a>
+            <button class="navbar-toggler d-lg-none " type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link active text-white" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownId">
+                            <a class="dropdown-item text-white" href="#">Action 1</a>
+                            <a class="dropdown-item text-white" href="#">Action 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2 text" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 text-white" type="submit">Search</button>
+                </form>
+            </div>
+      </div>
+    </nav>
+    
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<!--  carousel-indicators -->
+        <div class=" carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-current="true" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" 
+            aria-current="true" aria-label="Slide 3"></button>
+        </div>
+<!--  carousel-slider-images -->
+        <div class=" carousel-inner">
+            <div class=" carousel-item active">
+                <img src="images/slide1.jpg" class="d-block w-100" alt="" id="img">
+                <div class="carousel-caption">
+                    <h3 class="display-2 fw-bold">Slide no-1</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, veritatis.</p>
+                </div>
+            </div>
+            <div class=" carousel-item">
+                <img src="images/slide2.jpg" class="d-block w-100" alt="" id="img">
+                <div class="carousel-caption">
+                    <h3 class="display-2 fw-bold">Slide no-2</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, veritatis.</p>
+                </div>
+            </div>
+            <div class=" carousel-item">
+                <img src="images/slide3.jpg" class="d-block w-100" alt="" id="img">
+                <div class="carousel-caption">
+                    <h3 class="display-2 fw-bold">Slide no-3</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, veritatis.</p>
+                </div>
+            </div>
+        </div>
+<!-- left and right controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container-fluid bg-danger py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-2 mb-md-0 my-7 text-center py-5">
+                    <img src="images/burgur.jpg" alt="" width="500px" height="500px" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-12 col-md-6 text-white text-center text-md-start">
+                    <h2 class="display-2 fw-bold">Special foods</h2>
+                    <p class="fs-3 py-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus pariatur tempora nihil eveniet, ad voluptatem. Deserunt sunt rem nostrum recusandae.</p>
+                    <button class="btn text-uppercase px-4 fs-4 btn-lg rounded-pill bg-primary mb-3">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contaner-grid">
+        <div class="container my-5">
+            <p class="display-2 fw-bold text-center pb-2 pb-md-5">Popular menu</p>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="images/card1.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Noodles</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eligendi corrupti optio obcaecati itaque, quos, necessitatibus hic dolor earum eveniet quod totam vitae. Odit, eius?</p>
+                            <button class="btn bg-info text-white px-3 fs-5" id="btn1">Check more</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="images/card1.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Noodles</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eligendi corrupti optio obcaecati itaque, quos, necessitatibus hic dolor earum eveniet quod totam vitae. Odit, eius?</p>
+                            <button class="btn bg-info text-white px-3 fs-5" id="btn1">Check more</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="images/card1.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Noodles</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, eligendi corrupti optio obcaecati itaque, quos, necessitatibus hic dolor earum eveniet quod totam vitae. Odit, eius?</p>
+                            <button class="btn bg-info text-white px-3 fs-5" id="btn1">Check more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-grid bg-info py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-white">
+                    <h2 class="display-1 fw-bold">How to order</h2>
+                </div>
+            </div>
+
+            <div class="row text-white text-center pt-5">
+                <div class="col-12 col-md-4">
+                    <div class="bg-custom bg-white text-info mb-5 d-flex justify-content-center align-items-center">
+                        <p class="fw-bold display-4  ">01</p>
+                    </div>
+                    <p class="display-3 fw-bold">Order</p>
+                    <p class="fs-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed blanditiis ad in consectetur commodi totam.</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="bg-custom bg-white text-info mb-5 d-flex justify-content-center align-items-center">
+                        <p class="fw-bold display-4 ">02</p>
+                    </div>
+                    <p class="display-3 fw-bold">Choose menu</p>
+                    <p class="fs-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed blanditiis ad in consectetur commodi totam.</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="bg-custom bg-white text-info mb-5 d-flex justify-content-center align-items-center">
+                        <p class="fw-bold display-4 ">03</p>
+                    </div>
+                    <p class="display-3 fw-bold">Delivery</p>
+                    <p class="fs-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed blanditiis ad in consectetur commodi totam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="free">
+        <div class="container text-info text-center py-5">
+            <p class="display-1 fw-bold">Free Delivery</p>
+            <p class="fs-2 pt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis commodi quam culpa. Quod iste animi odit suscipit enim necessitatibus tempora.</p>
+            <button class="btn bg-info px-3 rounded-pill text-uppercase fs-3 text-white mt-4">Get Voucher</button>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <p class=""></p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="" class="w-25 me-auto">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 2</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+      </div>
+    </nav>
+    
+    
+    
+    
+<script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

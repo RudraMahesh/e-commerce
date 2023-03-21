@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Responsive website</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .form-check-input:checked{
+            background-color:#00e9bf;
+            border-color:#00e9bf;
+        }
+        .custom-btn{
+            background-color: #00e9bf;
+        }
+        .text-custom{
+            color:#00e9bf;
+        }
+        .iframe-custom{
+            font-size:23px;
+        }
+        .btn-outline-light{
+            --bs-btn-hover-bg: #6c757d;
+        }
+        .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
+            color: var(--bs-body-bg);
+            font-size: 50px;
+        }
+        .owl-nav button.owl-next span, .owl-nav button.owl-prev span{
+            color: rgb(161, 160, 160);
+        }
+        .fa-angle-left{
+            position: absolute;
+            left: -30px;
+            bottom: 50%;
+        }
+        .fa-angle-right{
+            position: absolute;
+            right: -30px;
+            bottom: 50%;
+        }
+        .navbar-brand{
+            margin-right: var(--bs-navbar-brand-margin-start);
+            white-space: wrap;
+        }
+        .owl-carousel i{
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            right:30px;
+            top: 20px;
+        }
+        .custom-ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+        }
+        ul li:hover{
+            color: #00e9bf;
+        }
+        ul li{
+            font-size: 1.10rem;
+        }
+        .i-hover:hover{
+            color: #00e9bf;
+        }
+        .custom-hover:hover{
+            scale: calc(1.2);
+            transition: 0.5s;
+        }
+        .custom-badge{
+            font-size:12px;
+            background-color: #00e9bf;
+            color: red;
+        }
+        .vr{
+            background-color: #fff !important;
+            padding: 2px !important;
+        }
+        .custom-card i{
+            z-index: 100;
+        }
+        .custom-card i:hover{
+            color: #00e9bf;
+        }
+        .dropdown-color{
+            background-color: black;
+        }
+        .accordion-button:focus{
+            color:#fff !important;
+            border:1px solid #fff !important;
+        }
+        .accordion-button{
+            border-top:1px solid #fff !important;
+        }
+        .custom-a a:hover{
+            color: #00e9bf !important;
+        }
+        .bg-custom{
+            background-color: #323232;
+        }
+        .search{
+            padding:12px 10px !important;
+        }
+        .custom-link{
+            color: #00e9bf;
+        }
+
+        /* Media querry for all devices */
+
+        @media (min-width: 0){
+            .custom-card h4{
+                font-size: 15px !important;
+            }
+            .custom-card img{
+                height: 100px;
+                object-fit: contain;
+            }
+            .custom-card i{
+                font-size:25px;
+                position: absolute;
+                right:15px;
+                top: 15px;
+            }
+            .custom-card p ,.custom-card strike{
+                font-size: 20px !important;
+            }
+            .custom-card-brand img{
+                height: 100px;
+                object-fit: contain;
+            }
+            .pe-xl-7{
+                padding-right: 10rem;
+            }
+            .custom-info{
+                font-size: 18px !important;
+            }
+        }
+
+        /* for mobile */
+        @media (min-width: 576px){
+            .custom-card img{
+                height: 100px;
+                object-fit: contain;
+            }
+            .custom-card h4{
+                font-size: 10px !important;
+            }
+            .custom-card p ,.custom-card strike{
+                font-size: 20px !important;
+            }
+            .custom-card i{
+                font-size:20px;
+            }
+            .pe-xl-7{
+                padding-right: 10rem;
+            }
+            
+        }
+        /* for tablets */
+        @media (min-width: 768px){
+            .custom-card img{
+                height: 200px;
+                object-fit: contain;
+            }
+            .custom-card h4{
+                font-size: 20px !important;
+            }
+            .custom-card i{
+                font-size:30px;
+            }
+            .pe-xl-7{
+                padding-right: 15rem;
+            }
+            .custom-width{
+                width: 75%; 
+            }
+        }
+        /* for laptop and deskstop */
+        @media (min-width: 992px){
+            .custom-card img{
+                height: 250px;
+                object-fit: contain;
+            }
+            .custom-card h4{
+                font-size: 10px !important;
+            }
+            .pe-xl-7{
+                padding-right: 15rem;
+            }
+            .custom-width{
+                width: 75%; 
+            }
+        }
+        /* for larger deskstop */
+        @media (min-width: 1200px){
+            .custom-card img{
+                height: 250px;
+                object-fit: contain;
+            }
+            .custom-card h4{
+                font-size: 25px !important;
+            }
+            .custom-card i{
+                font-size:30px;
+            }
+            .pe-xl-7{
+                padding-right: 15rem;
+            }
+            .custom-width{
+                width: 50%; 
+            }
+        }
+        /* for largest deskstop */
+        @media (min-width: 1400px){
+            .custom-card img{
+                width: 100px;
+                height: 230px;
+                object-fit: contain;
+            }
+            .custom-card h4{
+                font-size: 20px !important;
+            }
+            .custom-card p ,.custom-card strike{
+                font-size: 23px !important;
+            }
+            .custom-card i{
+                font-size:30px;
+                position: absolute;
+                right:15px;
+                top: 18px;
+            }
+            .custom-card-brand img{
+                height: 150px;
+                object-fit: contain;
+            }
+            .custom-info{
+                font-size:20px
+            }
+            .pe-xl-7{
+                padding-right: 20rem;
+            }
+            .custom-width{
+                width: 50%; 
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<!-- ....for navbar.... -->
+    <nav class="navbar navbar-expand-sm navbar-dark  bg-dark sticky-top px-lg-5 ">
+          <div class="container-fluid text-white px-lg-5 mx-lg-5 py-2">
+            <a href="#" class="d-block d-lg-none d-md-none text-white pt-2" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"><i class="fa-solid fa-bars fa-2x"></i></a>
+            <a class="navbar-brand text-white ps-lg-5 " href="index.html">
+                <img src="images/logo.svg" alt="" class="w-100 img-fluid">
+            </a>
+            <ul class="navbar-nav mt-2 mt-lg-0 d-lg-none nav flex-row d-md-none">
+                    <!-- <li class="nav-item me-lg-5">
+                        <a class="nav-link text-white btn btn-outline-light px-3 d-none d-lg-block" href="#" aria-current="page"><i class="fa-solid fa-location-dot"></i>&nbsp;Location</a>
+                    </li> -->
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user iframe-custom"></i></a>
+                    </li>
+                    <li class="nav-item ps-3">
+                        <a class="nav-link text-white" href="#" aria-current="page"><i class="fa-solid fa-cart-shopping iframe-custom"></i></a>
+                    </li>
+            </ul>
+            <!-- <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <!-- for mobile search -->
+            <form class="my-2 my-lg-0 me-auto d-flex d-md-none d-lg-none w-100 ms-lg-">
+                <input class="form-control ms-lg-5" type="text" placeholder="What are you looking for" >
+                <button class="btn btn-outline-success ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <div class="dropdown-center">
+                        <li class="nav-item dropdown d-none d-lg-block">
+                        <a class="nav-link dropdown-toggle text-white ms-lg-5 fs-5 mt-lg-2" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bars pe-1"></i>Menu</a>
+                        <div class="dropdown-menu bg-secondary dropdown-menu-dark" aria-labelledby="dropdownId" style="width: 500px;">
+                            <div class="text-white">
+                                <a class="dropdown-item text-white fs-5 pb-0 mb-1" href="#"><i class="fa-solid fa-crown pe-2"></i>Exclusive at croma</a>
+                                <hr class="mt-0 pt-0">
+                                <a class="dropdown-item text-white fs-5 pb-0 mb-1" href="#"><i class="fa-solid fa-award pe-2"></i>Top brands</a>
+                                <hr class="mt-0 pt-0">
+                                <a class="dropdown-item text-white fs-5 " href="#"><i class="fa-solid fa-store pe-2"></i>Croma store locator</a>
+                            </div>
+                            <div class="dropdown-color py-2">
+                                <span class="fw-bold text-white ms-3 fs-5">Shop by Category</span>
+                                <a class="dropdown-item text-white mt-2" href="#">Television and accessories</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Home appliances</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Phones and wearables</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Computers and tablets</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Kitchen appliances</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Audio and video</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Health and fitness</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Grooming and personal care</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Camera and Accessories</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Smart devices</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Gaming</a>
+                                <a class="dropdown-item text-white mt-2" href="#">Accessories</a>
+                            </div>
+                        </div>
+                    </li>
+                    </div>
+                </ul>
+                <form class="my-2 my-lg-0 me-auto d-flex custom-width ms-lg-4 ms-md-4">
+                    <input class="form-control ms-lg-5 py-2 search" type="text" placeholder="What are you looking for" >
+                    <button class="btn btn-outline-success ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <ul class="navbar-nav mt-2 mt-lg-0 me-lg-5">
+                    <li class="nav-item me-lg-5">
+                        <a class="nav-link text-white btn btn-outline-light px-3 d-none d-lg-block custom-hover" href="#" aria-current="page" data-bs-toggle="modal" data-bs-target="#modalId"><i class="fa-solid fa-location-dot"></i>&nbsp;Location</a>
+                    </li>
+                    <li class="nav-item me-lg-3">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user iframe-custom custom-hover"></i></a>
+                    </li>
+                    <li class="nav-item me-lg-4">
+                        <a class="nav-link text-white" href="cart.html" aria-current="page">
+                            <i class="fa-solid fa-cart-shopping iframe-custom custom-hover position-relative">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill custom-badge fw-bold">
+                                    1
+                                </span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+      </div>
+    </nav>
+
+<!-- offcanvas -->
+
+    <div class="offcanvas offcanvas-start bg-dark text-white" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fs-4" id="staticBackdropLabel" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign in | Create account</h5>
+            <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body m-0 p-0">
+            <div class="bg-custom py-3 fs-5">
+                <a class="dropdown-item text-white  pb-0 mb-1 ms-3" href="#"><i class="fa-solid fa-crown pe-2"></i>Exclusive at croma</a>
+                <hr class="mt-0 pt-0">
+                <a class="dropdown-item text-white  pb-0 mb-1 ms-3" href="#"><i class="fa-solid fa-award pe-2"></i>Top brands</a>
+                <hr class="mt-0 pt-0">
+                <a class="dropdown-item text-white   ms-3" href="#"><i class="fa-solid fa-store pe-2"></i>Croma store locator</a>
+            </div>
+            <div class="dropdown-color py-2">
+                <span class="fw-bold text-white ms-3 fs-4">Shop by Category</span>
+                <div class="accordion" id="accordionExample">
+              <div class="accordion-item bg-transparent text-white mt-3  mx-2 ">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
+                    Television and accessories
+                  </button>
+                </h2>
+                <div id="collapseOne1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Led tvs</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Tv Accessories</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Media streaming devices</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne">
+                    Home appliances
+                  </button>
+                </h2>
+                <div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Room heaters</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Fans</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Air coolers</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Garment cares</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Geysers</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Sewing Machines</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Air conditioners</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Refrigerators</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne">
+                    Phone and wearables
+                  </button>
+                </h2>
+                <div id="collapseOne3" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Iphones</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Samsung</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Oneplus</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Redmi</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Mi</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Vivo</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" aria-expanded="true" aria-controls="collapseOne">
+                    Computers and tablets
+                  </button>
+                </h2>
+                <div id="collapseOne4" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Ipads</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Full hd displays</a>
+                      <a class="dropdown-item text-white mt-1" href="#">HP</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Huwaei</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne">
+                    Kitchen appliances
+                  </button>
+                </h2>
+                <div id="collapseOne5" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Microwave</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Refrigerators</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Dish wash</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Mixer grinder</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne6" aria-expanded="true" aria-controls="collapseOne">
+                    Audio and video
+                  </button>
+                </h2>
+                <div id="collapseOne6" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Video tape</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Audio recorder</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item bg-transparent text-white mt-3 mx-2">
+                <h2 class="accordion-header bg-transparent text-white" id="headingOne">
+                  <button class="accordion-button bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne7" aria-expanded="true" aria-controls="collapseOne">
+                    Smart devices
+                  </button>
+                </h2>
+                <div id="collapseOne7" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body fs-6 pt-1 custom-a">
+                      <a class="dropdown-item text-white mt-1" href="#">Wrist watch</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Smart tv</a>
+                      <a class="dropdown-item text-white mt-1" href="#">Alexa</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </div>
+
+             <div class="bg-custom py-3 fs-5 text-white">
+                <a class="dropdown-item ms-3 pt-2" href="#">Help & Support</a>
+                <a class="dropdown-item ms-3 pt-2" href="#">About croma</a>
+                <a class="dropdown-item ms-3 pt-2" href="#">Terms of use</a>
+                <hr class="bg-light">
+                <span class=" ms-3">Follow us on</span><br>
+                <span class="text-white">
+                    <ul class="d-flex ps-3">
+                        <li class="list-group-item"><i class="fa-brands fa-facebook"></i></li>
+                        <li class="list-group-item ms-4"><i class="fa-brands fa-youtube"></i></li>
+                        <li class="list-group-item ms-4"><i class="fa-brands fa-instagram"></i></li>
+                        <li class="list-group-item ms-4"><i class="fa-brands fa-twitter"></i></li>
+                        <li class="list-group-item ms-4"><i class="fa-brands fa-linkedin"></i></li>
+                    </ul>
+                </span>
+                <p class="ms-3 mb-0 pb-0 mt-4">© Copyright 2021 Croma. All rights reserved</p>
+            </div>
+            
+        </div>
+    </div>
+
+<!-- Modal for login-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <a name="" id="" class="btn btn-outline-light px-5 mx-auto" href="#" role="button">Login</a><span class="text-white mx-1">or</span>
+        <a name="" id="" class="btn btn-outline-light px-3 mx-auto" href="#" role="button">Create account</a>
+        <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-auto align-items-center">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white mx-auto">Please enter your email id</label>
+                <input type="email" class="form-control bg-dark text-white" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label text-white" for="exampleCheck1">Keep me signed in</label>
+            </div>
+            <span class="text-white">By continuing you agree to our <a href="" class="text-custom">Terms of use</a> & <a href="" class="text-custom">Privacy policy</a></span>
+            <button type="submit" class="btn custom-btn px-5 btn-light mt-3">Continue</button>
+        </form>
+        
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal for location-->
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content bg-dark text-white align-items-center justify-content-center">
+            <button type="button" class="btn-close bg-light ms-auto mt-4 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header text-center px-3">
+                <h5 class="modal-title fs-3" id="modalTitleId">Select your location</h5>
+            </div>
+            <div class="modal-body text-center px-3">
+                <p>To check products and Delevery option available at your doorstep</p>
+                <div class="mb-2">
+                  <input type="text"
+                    class="form-control bg-dark text-white" name="" id="" aria-describedby="helpId" placeholder="Enter your Pincode">
+                </div>
+                <span class="">or</span><br>
+                <a name="" id="" class="btn btn-outline-light mt-2 w-100" href="#" role="button">Select from maps</a>
+                <button type="submit" class="btn custom-btn px-5 btn-light mt-4 w-100">Continue</button>
+
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+    
+<!-- ....for carousal.... -->
+
+    <div class="container-fluid">
+        <div id="carouselId" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+                <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+            </ol>
+            <div class="carousel-inner mb-2 mb-lg-4" role="listbox">
+                <div class="carousel-item active">
+                    <img src="images/carousal-img.webp" class="w-100 d-block" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousal-img2.webp" class="w-100 d-block" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousal-img3.webp" class="w-100 d-block" alt="Third slide">
+                </div>
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+        </div>
+    </div>
+
+<!-- ....products arrays.... -->
+
+    <!-- <div class="container">
+    <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Highlights</label>
+        <div class="owl-carousel">
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+            <div class="me-lg-2 me-1">
+                <img src="images/" alt="">
+            </div>
+        </div>
+    </div> -->
+
+<!-- ....products.... -->
+    <div class="container-fluid px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5"> 
+                <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Highlights</label>
+                <div class="owl-carousel ">
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img1.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img2.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img3.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img4.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img5.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img6.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/highlights/img7.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="container-fluid px-lg-5 mt-3">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5"> 
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new1.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new2.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new3.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new4.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new5.webp" alt="">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/new6.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ....products2.... -->
+    <div class="container-fluid mt-2 mt-md-0 px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+           <div class="px-lg-5 mx-lg-5">
+                 <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">New at croma</label>
+                <div class="row g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="images/product2.webp" alt="Title">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="images/product2copy.webp" alt="Title">
+                        </div>
+                    </div>
+                </div>
+           </div> 
+        </div>
+    </div>
+
+<!-- ....products3.... -->
+
+<div class="container-fluid mt-lg-3 mt-2 px-lg-5">
+    <div class="px-lg-5 mx-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Blockbuster deals</label>
+            <div class="owl-carousel">
+                <div class="me-lg-2 me-1">
+                    <img src="images/product1.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img1.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img2.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img3.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img4.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img5.webp" alt="">
+                </div>
+                <div class="me-lg-2 me-1">
+                    <img src="images/img6.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ....for laptops products.... -->
+
+    <div class="container-fluid mt-3 mt-md-0 px-lg-5">
+       <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                 <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Deals on laptop</label>
+                    <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap7.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Asus Rog scar 15 intel core i9 12 gen</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;95,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;99,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap2.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title">Dell inspiron 3000 intel i3 (15.6inch 8Gb RAM)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;40,999 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;52,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap3.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title">Hp intel core 5 11GEN iris x (15.6inch 16GB)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;60,000 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap4.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title">Lenovo ideapad Ryzen 3 (15.6inch 8Gb RAM)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;32,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;52,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap5.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title">Hp intel core 5 11GEN iris x (15.6inch 16GB)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;60,000 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap6.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">HP 14sfq1089AU AMD Ryzen 3 (14inch, 8GB)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;37,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;52,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">HP 14sfq1089AU AMD Ryzen 3 (14inch, 8GB)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;37,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;52,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/laptop/lap8.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">HP 14sfq1089AU AMD Ryzen 3 (14inch, 8GB)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;37,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;52,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+<!-- ....for watch products.... -->
+
+    <div class="container-fluid mt-2 mt-md-0 px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Best deals on watches</label>
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Noice colorfit pro 4 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;3,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;5,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch2.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Noice colorfit pro 4 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;3,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;5,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch3.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Firewolt ring3 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;4,499 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;6,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch4.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Firewolt ring3 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;5,090 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;7,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch5.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Noice colorfit pro 4 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;3,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;5,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch6.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Noice colorfit pro 4 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;4,550 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;5,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/watch/watch7.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Noice colorfit pro 4 smart watch (Bluetooth 44mm)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;4,890 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;5,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....for iPhone banners.... -->
+
+     <div class="container-fluid mt-2 mt-md-0 px-lg-5 mb-lg-3">
+       <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                 <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Deals on iphones brands</label>
+                <div class="row g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="images/iphone/banner.avif" alt="Title">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="images/iphone/banner2.avif" alt="Title">
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+<!-- ....for iPhone products.... -->
+
+    <div class="container-fluid mt-2 mt-md-0 px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Deals on iphone</label>
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/red-phone.avif" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 12 pro 64GB (Redish shade)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;53,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/white-phone.avif" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 12 128GB (alice white shade)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;64,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/phone2.png" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 14 pro 64GB Deep purple</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;92,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;99,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-2" src="images/iphone/i2.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 13 mini 256GB (pink)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;79,000 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;89,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/iphone.png" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 12 pro 64GB (bluish shade)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;53,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/phone1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 13 128GB (alpine green shade)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;64,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top" src="images/iphone/i1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Apple iphone 12 pro 64GB (green)</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;53,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;72,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....for washing machine products.... -->
+
+    <div class="container-fluid px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Deals on Washing machines</label>
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Whirlpool 6.5 kg 5 star fully automatic top load</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;23,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;32,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine2.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">LG 8 kg 5 star inverter fully automatic top load</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;40,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;57,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine3.png" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">LG 6.5 kg 5 star inverter fully automatic top load</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;17,790 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;27,000</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine4.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Lg 8 kg 5 Star Fully Automatic Front Load</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;39,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;42,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine5.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">IFB 8 kg 5 Star Fully Automatic Front Load</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;42,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;62,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/washing-machine/machine6.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Bosch 9/6 kg 5 Star Inverter Automatic</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;53,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;65,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....for television.... -->
+
+    <div class="container-fluid px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="owl-carousel" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Deals on Televisions</label>
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd1.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Mi 4A Horizon Edition 80 cm (32 inch) HD Ready LED</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;12,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;21,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd2.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">SAMSUNG Series 4 80 cm (32 inch) HD Ready LED</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;19,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;25,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd3.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Haier 80 cm (32 inch) HD Ready LED Smart Android</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;15,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;21,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd4.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">LG LM562 81.28 cm (32 inch) HD Ready LED Smart Web</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;14,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;23,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd5.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Croma 60 cm (24 inch) HD Ready LED TV with A+</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;5,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;9,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd6.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">OnePlus Y Series 80 cm (32 inch) HD Ready LED Smar</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;11,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;20,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <div class="card text-start bg-dark custom-card">
+                            <a href="index2.html" class="stretched-link"></a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-heart"></i></a>
+                            <img class="card-img-top pt-3" src="images/lcd/lcd7.webp" alt="Title">
+                            <div class="card-body text-white">
+                                <h4 class="card-title fs-4">Mi 5A 80 cm (32 Inches) HD Ready Smart Android TV</h4>
+                                <p class="card-text fw-bold fs-3">&#8377;12,990 &nbsp;<strike class="fs-4 fw-normal text-secondary">&#8377;23,900</strike></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....brands.... -->
+
+    <div class="container-fluid px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="brands" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Top brands</label>
+                <div class="demo owl-carousel custom-card-brand">
+                    <div class="me-lg-2 me-1 d-flex">
+                        <img src="images/brand/brand1.webp" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brand2.webp" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brand3.webp" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brand4.png" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brand5.webp" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brand6.webp" alt="" class=" img-fluid">
+                    </div>
+                    <div class="me-lg-2 me-1">
+                        <img src="images/brand/brnd7.webp" alt="" class=" img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....Top categories.... -->
+
+    <div class="container-fluid px-lg-5">
+        <div class="px-lg-5 mx-lg-5">
+            <div class="px-lg-5 mx-lg-5">
+                <label for="brands" class="text-white fw-bold fs-3 pb-1 pb-lg-2">Top Categories</label>
+                <div class="owl-carousel">
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img1.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Home appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img2.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Kitchen appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img3.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Mobile phones appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img4.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Gaming appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img5.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Electric appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img6.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Grooming appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-lg-2 me-1 border border-secondary rounded">
+                        <div class="card text-start bg-transparent custom-card">
+                            <img class="card-img-top pt-2 pt-lg-0" src="images/categories/img7.webp" alt="Title">
+                            <div class="card-title text-white text-center">
+                                <h4 class="fw-bold pt-2">Camera appliances</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ....info.... -->
+
+    <div class="container-fluid mt-3 mt-lg-0">
+        <div class="row text-white">
+            <p class="custom-info">Croma is India's first large format specialist electronics retail store. Founded in 2006, Croma brings under one roof, multi-brand digital gadgets and home electronics products.</p>
+            <p class="custom-info">From large appliances such as <a href="" class="custom-link">Air Conditioners</a>, <a href="" class="custom-link">Refrigerators</a>, and <a href="" class="custom-link">Televisions</a> to handy devices such as <a href="" class="custom-link"> Laptops</a>, <a href="" class="custom-link">Mobile Phones</a> , and <a href="" class="custom-link">Cameras</a>, Croma stocks over 22,000 products from over 500 brands in more than 248 stores across 80+ major cities</p>
+            <p class="custom-info">Croma brings alive the promise of a ‘Brighter Every Day’ with a world-class ambience to shop both in-store and online on croma.com while also creating a seamless omnichannel shopping experience that lets you enjoy the best of both, online and offline worlds.</p>
+            <p class="custom-info">You’ll always be spoilt for choice at Croma but will never be left confused. Experts at our stores will help you find the right appliance or gadget for your needs. Simply #AskCromaExperts or find the right electronics and appliances by yourself online with these <a href="" class="custom-link">Croma buying guides</a> for everything from gaming consoles, microwaves, desktops, air coolers, smart home devices, and more.</p>
+            <p class="custom-info">Whether you’re setting up a new home or looking to upgrade, our range of appliances from Samsung, LG, Whirlpool, Godrej, and IFB among others will ensure you go home with the best appliance from the best brands.
+            Croma’s own-label products – ACs, Refrigerators, Televisions, Washing Machines, and other kitchen appliances – aren’t just among the best in their respective categories, they’re also competitively priced.</p>
+            <p class="custom-info">Be productive at work with our range of Windows and Chromebook laptops from HP, Dell, and Lenovo among others, as well as MacBook machines from Apple. Or carry your entertainment in your bag with iPad and Surface or <a href="" class="custom-link">Android tablets</a> from Lenovo, Samsung, and others.</p>
+            <p class="custom-info">Pick the right brick for your calls and messages, gaming and binge watching: no matter if you’re an Apple fan or an Android geek, you’ll always find the right mobile phone from Apple, OnePlus, Xiaomi, and others right here at Croma</p>
+            <p class="custom-info">Avail of our exclusive deals and flash sales, and get the best prices on all electronic appliances. Buy gadgets online on Croma.com or from a Croma store near you, using easy EMI options, UPI, Credit Cards, and Tata Pay while also earning NeuCoins to use across all Tata brands. Already have a stash of NeuCoins? Use them here instead of cash and save big! Find out how to be part of the Croma and Tata family and get the best offers, here.</p>
+            <p class="custom-info">Make the most of your appliances and gadgets by opting for extended warranty that’ll have them covered beyond the manufacturer’s standard warranty and annual maintenance plans to keep your electronics in top shape.</p>
+
+        </div>
+    </div>
+
+<!-- ....footer.... -->
+
+    <div class="container-fluid bg-dark py-lg-5 py-3 mt-3 mg-lg-2">
+        <div class="container-fluid px-lg-5 ">
+            <div class="px-lg-5 mx-lg-4">
+                <div class="px-lg-5 mx-lg-4">
+                    <div class="row text-white">
+                        <div class="col-12 col-lg-4">
+                            <p class="fw-bold fs-3 my-0 ">Connect with us</p>
+                            <div class="mb-3">
+                            <input type="email" class="form-control py-2 py-lg-3 w-75" name="" id="" aria-describedby="emailHelpId" placeholder="Enter Email id">
+                            </div>
+                            <i class="fa-brands fa-facebook fa-2x pe-2 i-hover"></i>
+                            <i class="fa-brands fa-instagram fa-2x pe-2 i-hover"></i>
+                            <i class="fa-brands fa-twitter fa-2x pe-2 i-hover"></i>
+                            <p class="fs-5 pt-4">&#169; Copyright 2022 croma. All rights reserved</p>
+                        </div>
+                        <div class="vr d-none d-lg-block"></div>
+                        <div class="col-12 col-lg-4 pt-4 pt-lg-0">
+                            <div class="row custom-fsize fw-bold">
+                                <div class="col-6">
+                                    <ul class="p-0 px-lg-4">
+                                        <li class="list-group-item active fs-5">USEFUL LINKS </li>
+                                         <li class="list-group-item pb-4 pb-lg-4">ABOUT CROMA</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Help and support</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">FAQs</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Buying Guide</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Return policy</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Bulk enquiry</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Store Locator</li>
+                                        <li class="list-group-item">Delightful programmes</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="">
+                                        <li class="list-group-item pb-4 pb-lg-4">E-ware</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Franchise oppurtunity</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Site map</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Carrers at croma</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Terms of use</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Disclaimer</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Privacy policy</li>
+                                        <li class="list-group-item">Unboxed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vr d-none d-lg-block"></div>
+                        <hr class="d-lg-none">
+                        <div class="col-12 col-lg-3">
+                            <div class="row custom-fsize fw-bold">
+                                <div class="col-6">
+                                    <ul class="p-0 px-lg-3">
+                                        <li class="list-group-item active fs-5">PRODUCT</li>
+                                        <li class="list-group-item pb-4">TELEVISION & ACCESSORIES</li>
+                                        <li class="list-group-item pb-4">Home appliances</li>
+                                        <li class="list-group-item pb-4">Phone and wearables</li>
+                                        <li class="list-group-item pb-4">Computer and tablets</li>
+                                        <li class="list-group-item pb-4">Kitchen appliances</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="">
+                                        <li class="list-group-item pb-4">Grooming and personal care</li>
+                                        <li class="list-group-item pb-4">Camera and accossories</li>
+                                        <li class="list-group-item pb-4">Smart devices</li>
+                                        <li class="list-group-item pb-4">Gaming</li>
+                                        <li class="list-group-item pb-4">Accossories</li>
+                                        <li class="list-group-item d-none d-lg-block">Top brands</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="js/bootstrap.bundle.js"></script>
+<script src="OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+<script src="OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            nav: true,
+            slideBy: 3,
+            items: 3,
+            loop: true,
+            dots: false,
+            navText: ["<div class='owl-prev'><span class='fa fa-angle-left'></span></div>", "<div class='owl-next'><span class='fa fa-angle-right'></span></div>"],
+            responsive:{
+                0:{
+                    items: 2,
+                    nav: false
+                },
+                468:{
+                    items: 2,
+                    nav: false
+
+                },
+                1024:{
+                    items: 4,
+                }
+            }
+        });
+        
+    })
+    $(function(){
+        $(".demo").owlCarousel({
+            responsive:true,
+            responsive:{
+                0:{
+                    items:3
+                },
+                468:{
+                    items:4
+                },
+                1024:{
+                    items:6,
+                    slideBy:1
+
+                }
+            }
+        })
+    })
+    
+
+</script>
+</body>
+</html>

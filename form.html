@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>form page</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body{
+            background-color: black ;
+        }
+        .btn-check1:focus{
+            background-color: none !important;
+            border: 2px solid greenyellow !important;
+        }
+        .bg-color{
+            background-color: #00e9bf;
+        }
+        .form-check-input:checked{
+            background-color:#00e9bf;
+            border-color:#00e9bf;
+        }
+        .custom ul li:hover{
+            color: #00e9bf !important;
+        }
+        .custom li{
+            font-size: 1.10rem ;
+        }
+        .i-hover:hover{
+            color: #00e9bf;
+        }
+        .vr{
+            background-color: #fff !important;
+            padding: 2px !important;
+        }
+        /* Media querry for all devices */
+
+        @media (min-width: 0){
+            .custom label{
+                font-size: 12px !important;
+            }
+        }
+
+        /* for mobile */
+        @media (min-width: 576px){
+            .custom label{
+                font-size: 12px !important;
+            }
+            
+        }
+        /* for tablets */
+        @media (min-width: 768px){
+           .custom label{
+                font-size: 12px !important;
+            }
+        }
+        /* for laptop and deskstop */
+        @media (min-width: 992px){
+           .custom label{
+                font-size: 12px !important;
+            }
+        }
+        /* for larger deskstop */
+        @media (min-width: 1200px){
+           .custom label{
+                font-size: 12px !important;
+            }
+        }
+        /* for largest deskstop */
+        @media (min-width: 1400px){
+            .custom label{
+                font-size: 15px !important;
+            }
+            
+        }
+    </style>
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top px-lg-5 ">
+          <div class="container-fluid text-white px-lg-5 mx-lg-5 py-2">
+                <a class="navbar-brand text-white ps-lg-5 " href="index.html">
+                    <img src="images/logo.svg" alt="" class="w-100 img-fluid">
+                </a>
+
+                <div class="me-lg-5 custom mt-3 mt-lg-0 mt-md-0">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
+                        <label class="btn btn-outline-light px-lg-5 px-4 py-2" for="btnradio1">CART</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
+                        <label class="btn btn-outline-light px-lg-5 px-4 py-2" for="btnradio2">SHIPPING</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" disabled>
+                        <label class="btn btn-outline-light px-lg-5 px-4 py-2" for="btnradio3">PAYMENT</label>
+                    </div>
+                </div>
+            
+            </div>
+    </nav>
+
+  </header>
+  <main>
+    <div class="container mt-5 pt-5">
+        <div class="row text-white mt-5 mt-md-0">
+            <div class="col-12 col-lg-8">
+                <span class="fw-bold">Contact Information</span>
+                <form action="payment.html" name="form1">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <div class="bg-transparent text-white mt-2">
+                                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                                <select class="form-select bg-transparent text-secondary py-3" aria-label="Floating label select example">
+                                    <option value="1" class="bg-dark text-white">Mr</option>
+                                    <option value="2" class="bg-dark text-white">Mrs</option>
+                                    <option value="3" class="bg-dark text-white">Miss</option>
+                                    <option value="3" class="bg-dark text-white">Mss</option>
+                                    <option value="3" class="bg-dark text-white">Dr</option>
+                                    <option value="3" class="bg-dark text-white">Prof</option>
+                                </select>
+                            </div>
+                            <div class="bg-transparent mt-3 mt-lg-4">
+                                <label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+                                <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Middle Name" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="mb-3 mt-3 mt-lg-4">
+                                <label for="exampleFormControlInput1" class="form-label">Email address*</label>
+                                <input type="email" class="form-control py-3 bg-transparent text-white"  placeholder="name@example.com" id="mail">
+                                <h4 id="email" class="fs-6 text-danger"></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="bg-transparent mt-2">
+                            <label for="exampleFormControlInput1" class="form-label">First Name*</label>
+                            <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1" id="first">
+                            <h4 id="name" class="fs-6 text-danger"></h4>
+                        </div>
+                        <div class="bg-transparent mt-3 mt-lg-4">
+                            <label for="exampleFormControlInput1" class="form-label">Last Name*</label>
+                            <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1" id="last">
+                            <h4 id="l-name" class="fs-6 text-danger"></h4>
+                        </div>
+                        <div class="bg-transparent mt-3 mt-lg-4">
+                            <label for="exampleFormControlInput1" class="form-label">Mobile Number*</label>
+                            <input type="tel" class="form-control text-white py-3 bg-transparent" placeholder="Your number" id="number">
+                            <h4 id="no" class="fs-6 text-danger"></h4>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="row text-white">
+                    <span class="fw-bold">Enter Shipping Address</span>
+                    <div class="mt-3 mt-lg-4">
+                        <span>Address Details</span>
+                        <div class="bg-transparent mt-1 mt-lg-2">
+                            <label for="exampleFormControlInput1" class="form-label">Address*</label>
+                            <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Your Address" aria-label="Username" aria-describedby="basic-addon1" id="address">
+                        </div>
+                        <div class="bg-transparent mt-3">
+                            <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Flat name/House no/Society" aria-label="Username" aria-describedby="basic-addon1" id="address1">
+                        </div>
+                        <div class="bg-transparent mt-3">
+                            <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Landmark/Locality/Area" aria-label="Username" aria-describedby="basic-addon1" id="address2">
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col">
+                                <div class="bg-transparent mt-1 mt-lg-2">
+                                    <label for="exampleFormControlInput1" class="form-label">State</label>
+                                    <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Your State" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="bg-transparent mt-1 mt-lg-2">
+                                    <label for="exampleFormControlInput1" class="form-label">City</label>
+                                    <input type="text" class="form-control text-white py-3 bg-transparent" placeholder="Your City" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="exampleFormControlInput1" class="form-label mt-3">Address Type</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input custom-radio" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">HOME</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input custom-radio" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="inlineRadio2">WORK</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input custom-radio" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                <label class="form-check-label" for="inlineRadio3">OTHER</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="exampleFormControlInput1" class="form-label mt-3">Billing Address</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input custom-radio" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3">Same as Shipping Address</label>
+                    </div>
+                </div>
+                <hr>
+                <span class="pt-1"><i class="fa-solid fa-box fs-5"></i> <span class="fs-5 fw-bold">Standard Delivery by Mon, 26nd Nov</span></span>
+                <hr>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <div class="border rounded mt-3 mt-lg-5 mb-3 mb-lg-0">
+                    <div class="px-4 py-3">
+                        <p class="fw-bold mb-0">Order Summary ( 1 item )</p>
+                        <div class="d-flex align-items-center pt-2">
+                        <div class="col"> <p class="fs-5 mb-0">Original Price</p></div>
+                            <div class="text-end col"><span class="fs-5">₹59,900.00</span></div>
+                        </div>
+                        <div class="d-flex align-items-center pt-2">
+                        <div class="col"> <p class="fs-5 mb-0">Delivery</p></div>
+                            <div class="text-end col"><span class="fs-5">Free</span></div>
+                        </div>
+                        <div class="d-flex align-items-center pt-2">
+                        <div class="col"> <p class="fs-5 mb-0">Total</p></div>
+                            <div class="text-end col"><span class="fs-5">₹59,900.00</span></div>
+                        </div>
+                        <a name="" id="" class="btn btn-light w-100 bg-color text-dark fw-bold mt-3" href="#" role="button" onclick="myValidation()">Proceed to Payment</a>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+    </form>
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+      <div class="container-fluid bg-dark py-lg-3 py-3 mt-3 mt-lg-5 pt-lg-5 custom">
+        <div class="container-fluid px-lg-5 pt-lg-4">
+            <div class="px-lg-5 mx-lg-4">
+                <div class="px-lg-5 mx-lg-4">
+                    <div class="row text-white pb-lg-5">
+                        <div class="col-12 col-lg-4">
+                            <p class="fw-bold fs-3 my-0 ">Connect with us</p>
+                            <div class="mb-3">
+                            <input type="email" class="form-control py-2 py-lg-3 w-75" name="" id="" aria-describedby="emailHelpId" placeholder="Enter Email id">
+                            </div>
+                            <i class="fa-brands fa-facebook fa-2x pe-2 i-hover"></i>
+                            <i class="fa-brands fa-instagram fa-2x pe-2 i-hover"></i>
+                            <i class="fa-brands fa-twitter fa-2x pe-2 i-hover"></i>
+                            <p class="fs-5 pt-4">&#169; Copyright 2022 croma. All rights reserved</p>
+                        </div>
+                        <div class="vr d-none d-lg-block"></div>
+                        <div class="col-12 col-lg-4 pt-4 pt-lg-0">
+                            <div class="row custom-fsize fw-bold">
+                                <div class="col-6">
+                                    <ul class="p-0 px-lg-4 ">
+                                        <li class="list-group-item active fs-5">USEFUL LINKS </li>
+                                         <li class="list-group-item pb-4 pb-lg-4">ABOUT CROMA</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Help and support</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">FAQs</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Buying Guide</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Return policy</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Bulk enquiry</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Store Locator</li>
+                                        <li class="list-group-item">Delightful programmes</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class=" ">
+                                        <li class="list-group-item pb-4 pb-lg-4">E-ware</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Franchise oppurtunity</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Site map</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Carrers at croma</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Terms of use</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Disclaimer</li>
+                                        <li class="list-group-item pb-4 pb-lg-4">Privacy policy</li>
+                                        <li class="list-group-item">Unboxed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vr d-none d-lg-block"></div>
+                        <hr class="d-lg-none">
+                        <div class="col-12 col-lg-3">
+                            <div class="row custom-fsize fw-bold">
+                                <div class="col-6">
+                                    <ul class="p-0 px-lg-3 ">
+                                        <li class="list-group-item active fs-5">PRODUCT</li>
+                                        <li class="list-group-item pb-4">TELEVISION & ACCESSORIES</li>
+                                        <li class="list-group-item pb-4">Home appliances</li>
+                                        <li class="list-group-item pb-4">Phone and wearables</li>
+                                        <li class="list-group-item pb-4">Computer and tablets</li>
+                                        <li class="list-group-item pb-4">Kitchen appliances</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class=" ">
+                                        <li class="list-group-item pb-4">Grooming and personal care</li>
+                                        <li class="list-group-item pb-4">Camera and accossories</li>
+                                        <li class="list-group-item pb-4">Smart devices</li>
+                                        <li class="list-group-item pb-4">Gaming</li>
+                                        <li class="list-group-item pb-4">Accossories</li>
+                                        <li class="list-group-item d-none d-lg-block">Top brands</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script>
+    
+
+    function myValidation(){
+        var x = document.form1.first.value;
+        var y = document.form1.last.value;
+        var z = document.form1.number.value;
+        var a = document.form1.mail.value;
+        var b = document.form1.address.value;
+        var c = document.form1.address1.value;
+        var d = document.form1.address2.value;
+        if(x == ""&& y == "" && z == ""&& a == ""&& b == ""&& c == ""&& d == ""){
+            document.getElementById("name").innerHTML = "First Name is Required";
+            document.getElementById("first").style.border = "1px solid red";
+            document.getElementById("l-name").innerHTML = "Last Name is Required";
+            document.getElementById("last").style.border = "1px solid red";
+            document.getElementById("no").innerHTML = "Mobile No is Required";
+            document.getElementById("number").style.border = "1px solid red";
+            document.getElementById("email").innerHTML = "Mobile No is Required";
+            document.getElementById("mail").style.border = "1px solid red";
+            document.getElementById("address").style.border = "1px solid red";
+            document.getElementById("address1").style.border = "1px solid red";
+            document.getElementById("address2").style.border = "1px solid red";
+        }
+        else {
+            document.form1.submit();
+        }
+    }
+    
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
